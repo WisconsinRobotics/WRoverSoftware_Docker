@@ -32,7 +32,7 @@ COPY requirements.txt /tmp/requirements.txt
 RUN pip3 install --no-cache-dir -r /tmp/requirements.txt && \
 	rm /tmp/requirements.txt
 	
-WORKDIR /root/WRoverSoftware_26-27
+WORKDIR /root
     
 CMD ["/bin/bash"]
 

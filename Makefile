@@ -1,9 +1,10 @@
 run:
 	docker run -it \
 	--rm \
+	--name wrover-container \
 	--net=host \
 	--privileged \
-	-v $(shell cd ../WRoverSoftware_26-27 && pwd):/root/WRoverSoftware_26-27 \
+	-v $(shell cd .. && pwd):/root \
 	-v $(HOME)/.gitconfig:/root/.gitconfig \
 	-v $(SSH_AUTH_SOCK):/ssh-agent \
 	-e SSH_AUTH_SOCK=/ssh-agent \
