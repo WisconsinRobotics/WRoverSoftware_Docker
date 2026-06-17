@@ -84,7 +84,9 @@ Used for software development for Wisconsin Robotics.
   
   ![Dev Containers extension](images/1.png)
   
-- Run the container and attach the container through the extension by clicking the right arrow next to the `wrover` container under `Dev Containers`.
+- Run `code .` in the workspace.
+  
+- Run the container in a separate terminal and attach the container through the extension by clicking the right arrow next to the `wrover` container under `Dev Containers`.
   
   ![Attach the container](images/2.png)
   
