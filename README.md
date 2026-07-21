@@ -24,8 +24,6 @@ Used for software development for Wisconsin Robotics.
 
 ## Setup
 
-### Workspace setup
-
 - Create a workspace directory.
 
 - Enter the workspace directory, then clone this repository.
@@ -34,20 +32,10 @@ Used for software development for Wisconsin Robotics.
   git clone git@github.com:WisconsinRobotics/WRoverSoftware_Docker.git
   ```
 
-### Adding other GitHub repositories
+- Set it as a safe directory for Git.
 
-- Make sure the repository is cloned into the workspace.
-
-- Set the repository as a safe directory for Git:
-  
   ```bash
-  git config --global --add safe.directory /root/workspace/<repo-name>
-  ```
-  
-- For example:
-  
-  ```bash
-  git config --global --add safe.directory /root/workspace/WRoverSoftware_26-27
+  git config --global --add safe.directory /root/workspace/WRoverSoftware_Docker
   ```
   
 ## Build
@@ -75,6 +63,12 @@ Used for software development for Wisconsin Robotics.
 - To exit, enter `exit` in the same terminal.
 
 ## Misc
+
+### Adding other GitHub repositories
+
+- Run the docker container.
+
+- **Inside** the docker container, clone the repo into the workspace directory.
 
 ### Visual Studio Code setup
 
@@ -108,4 +102,4 @@ Used for software development for Wisconsin Robotics.
   docker build -t wrover .
   ```
   
-- To push changes, create a new branch and open a PR (see [Git and CI/CD training]()).
+- To push changes, open a PR (see [Git and CI/CD training]()).
