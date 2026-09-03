@@ -40,7 +40,9 @@ Used for software development for Wisconsin Robotics.
   
 ## Build
 
-- Open a terminal in **this directory** and enter:
+- If you are using docker engine, make sure it is running first.
+
+- Navigate to this directory (WRoverSoftware_Docker) and enter:
 
   ```bash
   docker build -t wrover .
