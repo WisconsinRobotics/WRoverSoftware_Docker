@@ -14,6 +14,10 @@ Used for software development for Wisconsin Robotics.
 
 - Install [Docker Desktop on Windows](https://docs.docker.com/desktop/setup/install/windows-install/) or [Docker Desktop on Mac](https://docs.docker.com/desktop/setup/install/mac-install/).
 
+- For Windows, connect Docker Desktop to the WSL distro in settings.
+
+  ![Docker Desktop settings](images/docker.png)
+
 - Install make on Windows in a (WSL) terminal:
 
   ```bash
@@ -40,7 +44,7 @@ Used for software development for Wisconsin Robotics.
   
 ## Build
 
-- If you are using docker engine, make sure it is running first.
+- Make sure docker desktop is running.
 
 - Navigate to this directory (WRoverSoftware_Docker) and enter:
 
