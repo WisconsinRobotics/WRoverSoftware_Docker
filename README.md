@@ -10,7 +10,7 @@ Used for software development for Wisconsin Robotics.
 
   > **IMPORTANT:** All terminal commands should run in the WSL terminal on Windows.
 
-- Install and configure Git and SSH (see [Git and SSH Setup]()).
+- Install and configure Git and SSH (see [Git and SSH Setup](https://docs.google.com/document/d/1nh3XB0kvj7EMDJ3YU6YeAWiVRyPPHRfj/edit#heading=h.nrnjvwt1hpnv)).
 
 - Install [Docker Desktop on Windows](https://docs.docker.com/desktop/setup/install/windows-install/) or [Docker Desktop on Mac](https://docs.docker.com/desktop/setup/install/mac-install/).
 
