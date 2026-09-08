@@ -10,7 +10,7 @@ Used for software development for Wisconsin Robotics.
 
   > **IMPORTANT:** All terminal commands should run in the WSL terminal on Windows.
 
-- Install and configure Git, then generate an SSH key for GitHub (see [Git and CI/CD training]()).
+- Install and configure Git and SSH (see [Git and SSH Setup]()).
 
 - Install [Docker Desktop on Windows](https://docs.docker.com/desktop/setup/install/windows-install/) or [Docker Desktop on Mac](https://docs.docker.com/desktop/setup/install/mac-install/).
 
@@ -75,8 +75,6 @@ Used for software development for Wisconsin Robotics.
 ### Visual Studio Code setup
 
 - Download [VS Code](https://code.visualstudio.com/download).
-
-- Run `code .` in the workspace.
   
 - Install the Dev Containers VS Code extension.
   

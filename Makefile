@@ -1,3 +1,4 @@
+SSH_SOCK := $(if $(filter Darwin,$(shell uname -s)),/run/host-services/ssh-auth.sock,$(SSH_AUTH_SOCK))
 run:
 	docker run -it \
 	--rm \
@@ -6,6 +7,6 @@ run:
 	--privileged \
 	-v $(shell cd .. && pwd):/root/workspace \
 	-v $(HOME)/.gitconfig:/root/.gitconfig \
-	-v $(SSH_AUTH_SOCK):/ssh-agent \
+	-v $(SSH_SOCK):/ssh-agent \
 	-e SSH_AUTH_SOCK=/ssh-agent \
 	wrover
