@@ -92,7 +92,7 @@ Used for software development for Wisconsin Robotics.
 
 ### Adding python packages
 
-- Add the python package(s) in `requirements.txt`, one package per line.
+- Add the python package(s) which you want to add to the container in `requirements.txt`, one package per line.
   
   > For consistency, it's best to specify the package version, for example, `depthai==3.1.0`.
   
