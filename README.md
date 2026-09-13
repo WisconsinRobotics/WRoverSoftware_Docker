@@ -148,4 +148,4 @@ The child repositories inside `./workspace/` are bind-mounted live into their re
 
 - **Node.js Packages (GUI):** Install packages directly inside `WRoverSoftwareGUI` using `npm install <package-name>` or update `package.json`.
 
-- To push dependency or infrastructure changes, open a PR (see [Git and CI/CD training]()).
+- To push dependency or infrastructure changes, open a PR (see [Git and CI/CD training](https://docs.google.com/document/d/1nh3XB0kvj7EMDJ3YU6YeAWiVRyPPHRfj/edit?usp=sharing&ouid=105569728221765568022&rtpof=true&sd=true)).
