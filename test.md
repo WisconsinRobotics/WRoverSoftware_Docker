@@ -1,6 +1,6 @@
 # WRoverSoftware_Docker
 
-Multi-service Docker Compose environment running Ubuntu 22.04 with ROS 2 Humble, Python, and Node.js dependencies.
+Multi-service Docker Compose environment running Ubuntu 22.04 with ROS 2 Humble and Node.js dependencies.
 
 Used for software development across main rover autonomy, simulation, and web GUI systems for Wisconsin Robotics.
 
@@ -10,7 +10,7 @@ Used for software development across main rover autonomy, simulation, and web GU
 
   > **IMPORTANT:** All terminal commands should run in the WSL terminal on Windows.
 
-- Install and configure Git, then generate an SSH key for GitHub (see [Git and CI/CD training](https://docs.google.com/document/d/1nh3XB0kvj7EMDJ3YU6YeAWiVRyPPHRfj/edit?usp=sharing&ouid=105569728221765568022&rtpof=true&sd=true)). Ensure `ssh-agent` is running on your host machine to allow Git operations inside containers.
+- Install and configure Git, then generate an SSH key for GitHub (see [Git and CI/CD training](https://docs.google.com/document/d/1nh3XB0kvj7EMDJ3YU6YeAWiVRyPPHRfj/edit#heading=h.nrnjvwt1hpnv)). Ensure `ssh-agent` is running on your host machine to allow Git operations inside containers.
 
 - Install [Docker Desktop on Windows](https://docs.docker.com/desktop/setup/install/windows-install/) or [Docker Desktop on Mac](https://docs.docker.com/desktop/setup/install/mac-install/).
 
@@ -53,19 +53,17 @@ Used for software development across main rover autonomy, simulation, and web GU
   make build
   ```
 
-  > **NOTE:** You only need to rebuild when a `Dockerfile` or dependency file changes.
-
-- If running into permission issues on Linux/WSL, see [this post](https://stackoverflow.com/questions/48957195/how-to-fix-docker-permission-denied).
+  > **NOTE:** You only need to rebuild when a `Dockerfile` changes.
 
 ## Run
 
-- Start all container services in the background:
+- Start all services in the background:
 
   ```bash
   make up
   ```
 
-- Attach an interactive terminal shell to a specific running service:
+- Attach an interactive shell to a specific running service:
 
   ```bash
   make shell-main   # Main ROS 2 autonomy stack
@@ -73,7 +71,7 @@ Used for software development across main rover autonomy, simulation, and web GU
   make shell-gui    # Web GUI stack
   ```
 
-- Stop all running containers and exit:
+- Stop all running containers:
 
   ```bash
   make down
@@ -81,7 +79,7 @@ Used for software development across main rover autonomy, simulation, and web GU
 
 ## Repository & Branch Management
 
-The child repositories inside `./workspace/` are bind-mounted live into their respective containers. Each repository operates independently.
+The workspace repositories are bind-mounted into the containers live from `./workspace/`. Each repository operates independently.
 
 - **Check out a different branch for a single repository:**
 
@@ -95,8 +93,7 @@ The child repositories inside `./workspace/` are bind-mounted live into their re
   ```bash
   vcs custom workspace --args checkout dev
   ```
-  Note: Do not do this without consulting the software leads
-  
+
 - **Check workspace status across all repositories:**
 
   ```bash
@@ -105,11 +102,9 @@ The child repositories inside `./workspace/` are bind-mounted live into their re
 
 ## Visual Studio Code Setup
 
-- Download [VS Code](https://code.visualstudio.com/download).
+- Install [VS Code](https://code.visualstudio.com/download).
 
 - Install the **Dev Containers** extension in VS Code.
-
-  ![Dev Containers extension](images/1.png)
 
 - Open the `WRoverSoftware_Docker` folder in VS Code:
 
@@ -117,35 +112,21 @@ The child repositories inside `./workspace/` are bind-mounted live into their re
   code .
   ```
 
-- Open the Command Palette (`Ctrl+Shift+P` / `Cmd+Shift+P`) and select **Dev Containers: Open Folder in Container...** (or attach to a running container via the Remote Explorer panel).
+- Open the Command Palette (`Ctrl+Shift+P` / `Cmd+Shift+P`) and select **Dev Containers: Open Folder in Container...**.
 
-  ![Attach the container](images/2.png)
-
-- Choose the `.devcontainer` configuration for the target service:
+- Choose the `.devcontainer` configuration for the service you want to develop in:
   - `.devcontainer/main`
   - `.devcontainer/sim`
   - `.devcontainer/gui`
 
 - To disconnect, click the bottom-left corner of VS Code, select **Close Remote Connection**, and stop the stack using `make down`.
 
-  ![Bottom left corner](images/3.png)
+## Adding Dependencies
 
-  ![Close remote connection](images/4.png)
-
-## Adding Dependencies & Packages
-
-- **ROS 2 & System Dependencies:** Add apt packages to the respective service `Dockerfile` in `Dockerfiles/`, then rebuild:
+- **Python & ROS Dependencies:** Add ROS 2 or system dependencies to the respective service `Dockerfile` in `Dockerfiles/`, then rebuild the container:
 
   ```bash
   make build
   ```
 
-- **Python Packages:** Add package requirement(s) in `requirements.txt`, one package per line.
-
-  > For consistency, it's best to specify the package version, for example, `depthai==3.1.0`.
-
-  After adding packages, rebuild the Docker containers using `make build`.
-
 - **Node.js Packages (GUI):** Install packages directly inside `WRoverSoftwareGUI` using `npm install <package-name>` or update `package.json`.
-
-- To push dependency or infrastructure changes, open a PR (see [Git and CI/CD training]()).

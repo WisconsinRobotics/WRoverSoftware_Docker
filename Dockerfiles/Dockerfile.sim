@@ -11,7 +11,7 @@ RUN apt-get update && \
     git \
     vim \
     python3-pip && \
-    add-apt-repository universe && \
+    add-apt-repository -y universe && \
     rm -rf /var/lib/apt/lists/*
 
 # ROS 2
@@ -22,18 +22,20 @@ RUN export ROS_APT_SOURCE_VERSION=$(curl -s https://api.github.com/repos/ros-inf
 	apt-get update && \
     apt-get install -y \
     ros-humble-desktop \
+    ros-humble-joint-state-publisher-gui \
+    ros-humble-rosbridge-server \
+    python3-colcon-common-extensions \
+    python3-rosdep \
     ros-dev-tools && \
     rm -rf /var/lib/apt/lists/*
     
+
+# Initialize ROSDEP
+RUN rosdep init || true && rosdep update
 # Automatically source ROS 2
 RUN echo "source /opt/ros/humble/setup.bash" >> /root/.bashrc
     
-# Python
-COPY requirements.txt /tmp/requirements.txt
-RUN pip3 install --no-cache-dir -r /tmp/requirements.txt && \
-	rm /tmp/requirements.txt
-	
-WORKDIR /root/workspace
+WORKDIR /workspace
     
 CMD ["/bin/bash"]
 

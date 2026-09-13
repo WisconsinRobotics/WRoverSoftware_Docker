@@ -1,0 +1,15 @@
+repositories:
+  WRoverSoftware_26-27:
+    type: git
+    url: https://github.com/WisconsinRobotics/WRoverSoftware_26-27.git
+    version: dev
+
+  WRoverSoftwareSim:
+    type: git
+    url: https://github.com/WisconsinRobotics/WRoverSoftware_Simulation.git
+    version: dev
+
+  WRoverSoftwareGUI:
+    type: git
+    url: https://github.com/WisconsinRobotics/GUI.git
+    version: dev
