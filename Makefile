@@ -1,4 +1,4 @@
-SSH_SOCK ?= $(shell echo $$SSH_AUTH_SOCK)
+SSH_SOCK := $(if $(filter Darwin,$(shell uname -s)),/run/host-services/ssh-auth.sock,$(SSH_AUTH_SOCK))
 
 help:
 	@echo "Wisconsin Robotics Workspace Management:"
