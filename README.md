@@ -20,7 +20,7 @@ Used for software development across main rover autonomy, simulation, and web GU
   sudo apt update
   sudo apt install make
   sudo apt install python3-pip -y
-  pip3 install vcstool
+  pip install vcstool --break-system-packages
   ```
 
   Install `make` on Mac by installing [Xcode Command Line Tools](https://developer.apple.com/documentation/xcode/installing-the-command-line-tools/) and `vcstool` via `pip3 install vcstool`.
