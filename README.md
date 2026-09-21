@@ -18,6 +18,7 @@ Used for software development across main rover autonomy, simulation, and web GU
 
   ```bash
   sudo apt update
+  sudo apt install make
   sudo apt install pipx
   pipx install vcstool
   ```
