@@ -130,3 +130,8 @@ The workspace repositories are bind-mounted into the containers live from `./wor
   ```
 
 - **Node.js Packages (GUI):** Install packages directly inside `WRoverSoftwareGUI` using `npm install <package-name>` or update `package.json`.
+
+
+
+
+
