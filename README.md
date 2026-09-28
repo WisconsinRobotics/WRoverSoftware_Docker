@@ -14,6 +14,10 @@ Used for software development across main rover autonomy, simulation, and web GU
 
 - Install [Docker Desktop on Windows](https://docs.docker.com/desktop/setup/install/windows-install/) or [Docker Desktop on Mac](https://docs.docker.com/desktop/setup/install/mac-install/).
 
+- On Windows, connect WSL2 to Docker Desktop in settings.
+
+  ![Docker Desktop settings](images/docker.png)
+
 - Install `make` and `vcstool` in a (WSL) terminal:
 
   ```bash
