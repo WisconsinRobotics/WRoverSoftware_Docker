@@ -3,3 +3,4 @@ depthai==3.1.0
 pre-commit
 python-can
 pygame
+phoenix6
