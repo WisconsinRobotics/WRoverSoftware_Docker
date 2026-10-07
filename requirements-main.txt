@@ -4,3 +4,4 @@ pre-commit
 python-can
 pygame
 phoenix6
+ultralytics==8.4.174
