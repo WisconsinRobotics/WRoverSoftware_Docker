@@ -28,13 +28,13 @@ down:
 	docker compose down
 
 main:
-	SSH_AUTH_SOCK=$(SSH_SOCK) docker compose run --rm main bash
+	SSH_AUTH_SOCK=$(SSH_SOCK) docker compose run -d --rm main bash
 
 sim:
-	SSH_AUTH_SOCK=$(SSH_SOCK) docker compose run --rm sim bash
+	SSH_AUTH_SOCK=$(SSH_SOCK) docker compose run -d --rm sim bash
 
 gui:
-	SSH_AUTH_SOCK=$(SSH_SOCK) docker compose run --rm gui bash
+	SSH_AUTH_SOCK=$(SSH_SOCK) docker compose run -d --rm gui bash
 
 shell-main:
 	docker exec -it wrover_main bash
@@ -44,6 +44,9 @@ shell-sim:
 
 shell-gui:
 	docker exec -it wrover_gui bash
+
+auth_sock:
+	echo $(SSH_SOCK)
 
 clean:
 	docker compose down --volumes --remove-orphans
