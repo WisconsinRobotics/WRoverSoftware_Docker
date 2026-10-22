@@ -37,13 +37,13 @@ gui:
 	SSH_AUTH_SOCK=$(SSH_SOCK) docker compose run -d --rm gui bash
 
 shell-main:
-	docker exec -it wrover_main bash
+	docker compose exec main bash
 
 shell-sim:
-	docker exec -it wrover_sim bash
+	docker compose exec sim bash
 
 shell-gui:
-	docker exec -it wrover_gui bash
+	docker compose exec gui bash
 
 auth_sock:
 	echo $(SSH_SOCK)
