@@ -36,8 +36,9 @@ RUN echo "source /opt/ros/humble/setup.bash" >> /root/.bashrc
     
 # Python
 COPY requirements-main.txt /tmp/requirements-main.txt
-RUN pip3 install --no-cache-dir -r /tmp/requirements-main.txt && \
-	rm /tmp/requirements-main.txt
+COPY workspace/WRoverSoftware_26-27/src/state/requirements-statemachine.txt /tmp/requirements-statemachine.txt
+RUN pip3 install --no-cache-dir -r /tmp/requirements-main.txt -r /tmp/requirements-statemachine.txt && \
+	rm /tmp/requirements-main.txt /tmp/requirements-statemachine.txt
 	
 WORKDIR /workspace
     
