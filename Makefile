@@ -28,13 +28,13 @@ down:
 	docker compose down
 
 main:
-	SSH_AUTH_SOCK=$(SSH_SOCK) docker compose run -d --rm main bash
+	SSH_AUTH_SOCK=$(SSH_SOCK) docker compose run -d --rm --name wrover_main main bash
 
 sim:
-	SSH_AUTH_SOCK=$(SSH_SOCK) docker compose run -d --rm sim bash
+	SSH_AUTH_SOCK=$(SSH_SOCK) docker compose run -d --rm --name wrover_sim sim bash
 
 gui:
-	SSH_AUTH_SOCK=$(SSH_SOCK) docker compose run -d --rm gui bash
+	SSH_AUTH_SOCK=$(SSH_SOCK) docker compose run -d --rm --name wrover_gui gui bash
 
 shell-main:
 	docker compose exec main bash
