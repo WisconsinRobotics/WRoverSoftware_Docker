@@ -10,6 +10,9 @@ RUN apt-get update && \
     curl \
     git \
     vim \
+    gdal-bin \
+    libgdal-dev \
+    python3-gdal \
     python3-pip && \
     add-apt-repository -y universe && \
     rm -rf /var/lib/apt/lists/*
@@ -34,6 +37,9 @@ RUN export ROS_APT_SOURCE_VERSION=$(curl -s https://api.github.com/repos/ros-inf
 RUN rosdep init || true && rosdep update
 # Automatically source ROS 2
 RUN echo "source /opt/ros/humble/setup.bash" >> /root/.bashrc
+
+COPY requirements-sim.txt /tmp/requirements-sim.txt
+RUN pip3 install --no-cache-dir -r /tmp/requirements-sim.txt
     
 WORKDIR /workspace
     
