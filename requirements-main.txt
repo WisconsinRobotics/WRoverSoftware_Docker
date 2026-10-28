@@ -5,3 +5,5 @@ python-can
 pygame
 phoenix6
 ultralytics==8.4.174
+python-statemachine==3.2.2
+python-statemachine[diagrams]==3.2.2
