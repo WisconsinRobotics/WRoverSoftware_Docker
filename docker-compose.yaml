@@ -7,11 +7,13 @@ x-common-config: &common-config
     - QT_X11_NO_MITSHM=1
     - ROS_DOMAIN_ID=42 # For preventing crosstalk over network
     - SSH_AUTH_SOCK=/ssh-agent
+    - FASTDDS_DEFAULT_PROFILES_FILE=/workspace/WRoverSoftware_26-27/scripts/fastdds_profile.xml
   volumes:
     - ./workspace:/workspace
     - /tmp/.X11-unix:/tmp/.X11-unix:rw
     - ~/.gitconfig:/root/.gitconfig:ro
     - ${SSH_AUTH_SOCK}:/ssh-agent
+    - /dev/input:/dev/input
   tty: true
   stdin_open: true
 
